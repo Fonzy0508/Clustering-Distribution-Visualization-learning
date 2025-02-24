@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import umap 
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
@@ -25,6 +26,23 @@ print(f"Target shape {y.shape}")
 
 ## checks all the labels
 print(f"Unique labels: {set(map(int, y))}")
+
+def Init_UMAP():
+    # Initialize UMAP
+    reducer = umap.UMAP(n_components=2, random_state=42)
+
+    # Apply UMAP on the digits data
+    X_umap = reducer.fit_transform(x)
+
+    # Visualize UMAP output
+    plt.figure(figsize=(8, 6))
+    scatter = plt.scatter(X_umap[:, 0], X_umap[:, 1], c=y, cmap='Spectral', s=10)
+    plt.title('UMAP Projection - Digits Dataset')
+    plt.xlabel('UMAP Component 1')
+    plt.ylabel('UMAP Component 2')
+    plt.colorbar(scatter, label='Digit Label')
+    plt.show()
+    return X_umap,"UMAP"
 
 ## FUNCTIONS FOR DIMENSION REDUCTION
 def Init_PCA(data, isShowPlot = False):
@@ -75,7 +93,7 @@ def Init_tSNE(data, labels, n_components=2, perplexity=30, learning_rate=200, is
     return X_tsne, "t-SNE"
 
 ## Select the right Dimension reduction (change if needed)
-X_ReductedDimension , DimensionReductor = Init_tSNE(x,y,2,30,200,True)
+X_ReductedDimension , DimensionReductor = Init_UMAP()
 # X2_ReductedDimension , D2imensionReductor = Init_tSNE(x,y,2,50,200)
 
 ## Print the reducted dimension shape
@@ -123,7 +141,7 @@ def Init_DBSCAN():
     from sklearn.cluster import DBSCAN
 
     # Initialize DBSCAN
-    dbscan = DBSCAN(eps=0.5, min_samples=5)
+    dbscan = DBSCAN(eps=0.1, min_samples=5)
 
     # Fit DBSCAN to PCA-reduced data
     dbscan_labels = dbscan.fit_predict(X_ReductedDimension)
@@ -197,6 +215,6 @@ def Init_HierarchicalClustering():
     plt.show()
 
 # Plot_Dataset(10)
-Init_Kmeans()
-# Init_DBSCAN()
+# Init_Kmeans()
+Init_DBSCAN()
 # Init_HierarchicalClustering()
