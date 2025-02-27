@@ -1,80 +1,28 @@
-# Clustering Distribution Visualization on Digits Dataset
+# Deep Learning & Clustering Explorations
 
-This project explores **clustering algorithms** and **dimensionality reduction** techniques on the **Digits dataset** from `sklearn`. It focuses on **visualizing cluster distributions** to better understand how clustering algorithms behave on reduced-dimensional data.
+Welcome! 😊 This repository focuses on visualizing and exploring different deep learning and clustering techniques. The study involves using **Autoencoders**, **dimensionality reduction techniques**, and **clustering algorithms** to analyze high-dimensional data.
 
-## 📊 Techniques Used
+## 📊 Visualizations
 
-### Dimensionality Reduction
-- **UMAP** (Uniform Manifold Approximation and Projection)
-- **PCA** (Principal Component Analysis)
-- **t-SNE** (t-Distributed Stochastic Neighbor Embedding)
+This study emphasizes visual analysis, including:
 
-### Clustering Algorithms
-- **K-Means Clustering**
-- **DBSCAN** (Density-Based Spatial Clustering of Applications with Noise)
-- **Hierarchical Clustering**
+- **Reconstructed images** (if applicable)
+- **2D & 3D embeddings** after dimension reduction
+- **Clustering results** across different techniques
 
-### Evaluation Metrics
-- **Silhouette Score** for assessing clustering performance
+## 🛠 Tools & Libraries
 
-## 📁 Project Structure
+This project was built using **Google Colab** with:
 
-```
-├── main.py                # Main Python script for clustering and visualization
-├── README.md              # This file
-└── requirements.txt       # Python dependencies
-```
+- **TensorFlow Keras** - for deep learning models 🤖
+- **Matplotlib** - for visualization 📊
+- **NumPy** - for numerical computations 🔢
+- **Scikit-learn** - for clustering and reduction algorithms 🏗️
+- **UMAP** - for nonlinear dimensionality reduction 🚀
 
-## 🚀 How to Run
+## 🎯 Goals
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/clustering-visualization.git
-   cd clustering-visualization
-   ```
-
-2. **Create a virtual environment and activate it:**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
-
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run the script:**
-   ```bash
-   python main.py
-   ```
-
-## 📷 Sample Visualizations
-
-- UMAP Projection of Digits Dataset
-- Clustering results from K-Means, DBSCAN, and Hierarchical Clustering
-- Dendrogram from Hierarchical Clustering
-
-## 📖 Learnings & Goals
-
-This project is part of my journey into **Machine Learning**, focusing on:
-
-- Understanding and applying **clustering algorithms**
-- Exploring **dimensionality reduction** techniques
-- Enhancing skills in **data visualization**
-- Improving overall understanding of **cluster distribution visualization**
-
-## 🔮 Next Steps
-
-- Experiment with **neural network embeddings** on the Digits dataset
-- Explore more complex clustering algorithms
-- Dive deeper into **unsupervised learning** techniques
-
-## 🤝 Contributions
-
-This is my first GitHub project! Feel free to open issues, suggest improvements, or just say hi 👋
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
+- Explore how different **Autoencoders** transform data.
+- Compare **dimensionality reduction** techniques.
+- Evaluate how **clustering algorithms** perform on reduced data.
+- Provide clear **visual insights** into high-dimensional datasets.
